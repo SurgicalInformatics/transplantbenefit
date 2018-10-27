@@ -1,0 +1,31 @@
+wellPanel(
+	h2("Recipient"),
+	
+	numericInput("previous_tx_tbs", "Number previous liver transplants", 
+							 value=0, min = 0, max = 10, step = 1,
+							 width = NULL),
+	
+	numericInput("rcreatinine_tbs", "Serum creatinine (umol/L)", 
+							 value=90, min = 5, max = 900, step = 1,
+							 width = NULL),
+	radioButtons("rrenal_tbs", label = "Renal replacement therapy", 
+							 choices = list("No" = 0, "Yes" = 1),
+							 selected = 0, width=NULL, inline=TRUE),
+	numericInput("rbilirubin_tbs", "Bilirubin (umol/L)", value=20, min = 12, max = 110, step = 1,
+							 width = NULL),
+	numericInput("rinr_tbs", "INR", value=1.0, min = 0.4, max = 50, step = 0.1,
+							 width = NULL),
+	numericInput("rsodium_tbs", "Sodium", value=135, min = 110, max = 170, step = 1,
+							 width = NULL),
+	numericInput("rpotassium_tbs", "Potassium", value=4.5, min = 2.0, max = 10, step = 0.1,
+							 width = NULL),
+	numericInput("ralbumin_tbs", "Albumin", value=30, min = 5, max = 60, step = 1,
+							 width = NULL),
+	radioButtons("rencephalopathy_tbs", label = "Encephalopathy", 
+							 choices = list("No" = 0, "Yes" = 1),
+							 selected = 0, width=NULL, inline=TRUE),
+	radioButtons("rascites_tbs", label = "Ascites", 
+							 choices = list("No" = 0, "Yes" = 1),
+							 selected = 0, width=NULL, inline=TRUE)
+	
+)
