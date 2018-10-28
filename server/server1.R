@@ -115,7 +115,7 @@ x1 = reactive({
 						 			input$rwaiting_time_tbs+1,
 						 			input$rdiabetes_tbs,
 						 			rdisease_vec(),
-						 			input$rmax_afp_tbs,
+						 			as.numeric(input$rmax_afp_tbs) + 1,
 						 			input$rmax_tumour_size_tbs,
 						 			rtumour_number_vec(),
 						 			input$dage_tbs,
@@ -238,8 +238,8 @@ linear_prediction_cancer = reactive({
 									raw_x1, raw_x2, transformed_x1, transformed_x2) %>% 
 		mutate(m1_x = (transformed_x1*transformed_x2) - m1_mean,
 					 m2_x = (transformed_x1*transformed_x2) - m2_mean,
-					 m1_yhat = m1_x * m1_beta,
-					 m2_yhat = m2_x * m2_beta)
+					 m1_beta_x = m1_beta * m1_x,
+					 m2_beta_x = m2_beta * m2_x)
 })
 
 linear_prediction_noncancer = reactive({
@@ -294,26 +294,28 @@ tbs = reactive({
 	m2() - m1()
 })
 
-
-output$x1 = renderDataTable(linear_prediction_active())
-# output$m1 = renderText(m1())
-# output$m2 = renderText(m2())
-output$m1 = renderText(m1())
-output$m2 = renderText(m2())
-output$tbs = renderText(tbs())
-#output$xnames = renderDataTable(xnames())
-
-output$tmp = renderText({
-	paste("rdisease_group=", rdisease_group(),
-				"rhcv=", rhcv())
-	paste("rdisease_vec=", rdisease_vec(), collapse=",")
+# Output
+output$m1Box <- renderInfoBox({
+	infoBox(
+		"Need (M1)", h1(finalfit::round_tidy(m1(), 1)), icon = icon("bar-chart"),
+		color = "orange", fill=TRUE
+	)
 })
-
-output$tmp = renderText({
-	paste(x1(), collapse=","
+output$m2Box <- renderInfoBox({
+	infoBox(
+		"Utility (M2)", h1(finalfit::round_tidy(m2(), 1)), icon = icon("bar-chart"),
+		color = "orange", fill=TRUE
+	)
+})
+output$tbsBox <- renderInfoBox({
+	infoBox(
+		"TBS (M2-M1)", h1(finalfit::round_tidy(tbs(), 1)), icon = icon("bar-chart"),
+		color = "orange", fill=TRUE
 	)
 })
 
 
-
-
+output$x1 = DT::renderDataTable(
+	DT::datatable(linear_prediction_active(),
+								options = list(paging = FALSE))
+)

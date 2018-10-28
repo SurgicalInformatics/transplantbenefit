@@ -1,5 +1,5 @@
 wellPanel(
-	h2("Recipient"),
+	h2("Recipient details"),
 	selectInput("centre_tbs", label = "Centre", 
 							choices = list("Newcastle" = 0, 
 														 "Leeds" = 1,
@@ -21,7 +21,7 @@ wellPanel(
 														 "2009" = 4,
 														 "2008" = 3,
 														 "2007" = 2),
-							selected = 0, selectize=FALSE, width=NULL),
+							selected = 1, selectize=FALSE, width=NULL),
 	
 	numericInput("rwaiting_time_tbs", "Waiting time (days)", value=30, min = 0, max = 2000, step = 1,
 							 width = NULL),
@@ -68,9 +68,9 @@ wellPanel(
 														 "Metabolic/Wilson's/alpha-1" = 8,
 														 "Nil or other" = 9),
 							selected = 9, selectize=FALSE, width=NULL),
-	radioButtons("rdiabetes_tbs", label = "Diabetes", 
-							 choices = list("No" = 0, "Yes" = 1),
-							 selected = 0, width=NULL, inline=TRUE),
+	numericInput("previous_tx_tbs", "Number previous liver transplants", 
+							 value=0, min = 0, max = 10, step = 1,
+							 width = NULL),
 	radioButtons("rprevious_surgery_tbs", label = "Previous abdominal surgery", 
 							 choices = list("No" = 0, "Yes" = 1),
 							 selected = 0, width=NULL, inline=TRUE)
