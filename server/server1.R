@@ -88,6 +88,15 @@ dcause_vec = reactive({
 	group2dummy(4, as.numeric(input$dcause_tbs))
 })
 
+# Fix this funny Royal Free creatinine thing
+rcreatinine = reactive({
+	if(input$centre_tbs == "3"){
+		out = (input$rcreatinine_tbs + 23.4) / 1.2
+	}else{
+		out = input$rcreatinine_tbs
+	}
+})
+
 # Assemble x1
 x1 = reactive({
 	data.frame(raw_x1 = 
@@ -97,7 +106,7 @@ x1 = reactive({
 						 			input$rgender_tbs,
 						 			rhcv(),
 						 			rdisease_vec(),
-						 			input$rcreatinine_tbs,
+						 			rcreatinine(),
 						 			input$rbilirubin_tbs,
 						 			input$rinr_tbs,
 						 			input$rsodium_tbs,
@@ -173,7 +182,7 @@ x2 = reactive({
 						 			input$rbilirubin_tbs,
 						 			input$rbilirubin_tbs,
 						 			input$rbilirubin_tbs,
-						 			input$rcreatinine_tbs,
+						 			rcreatinine(),
 						 			1,
 						 			1,
 						 			1,
@@ -202,7 +211,7 @@ x2 = reactive({
 						 			ddiabetes_vec(),
 						 			input$dage_tbs,
 						 			input$rage_tbs,
-						 			input$rcreatinine_tbs,
+						 			rcreatinine(),
 						 			input$dtype_tbs,
 						 			input$dtype_tbs,
 						 			input$dtype_tbs,
@@ -245,7 +254,7 @@ linear_prediction_cancer = reactive({
 linear_prediction_noncancer = reactive({
 	linear_prediction() %>% 
 		dplyr::select(parameter, m1_beta = m1_noncancer_beta, m2_beta = m2_noncancer_beta, 
-									m1_mean = m1_noncancer_mean, m2_mean = m2_noncancer_mean, power, 
+									m1_mean = m1_noncancer_mean, m2_mean = m2_noncancer_mean, 
 									raw_x1, raw_x2, transformed_x1, transformed_x2) %>% 
 		mutate(m1_x = (transformed_x1*transformed_x2) - m1_mean,
 					 m2_x = (transformed_x1*transformed_x2) - m2_mean,
@@ -297,19 +306,25 @@ tbs = reactive({
 # Output
 output$m1Box <- renderInfoBox({
 	infoBox(
-		"Need (M1)", h1(finalfit::round_tidy(m1(), 1)), icon = icon("bar-chart"),
+		"Need (M1)", h1(finalfit::round_tidy(m1(), 1)), 
+		"Lower indicates greater need",
+		icon = icon("bar-chart"),
 		color = "orange", fill=TRUE
 	)
 })
 output$m2Box <- renderInfoBox({
 	infoBox(
-		"Utility (M2)", h1(finalfit::round_tidy(m2(), 1)), icon = icon("bar-chart"),
+		"Utility (M2)", h1(finalfit::round_tidy(m2(), 1)), 
+		"Higher indicates greater utility",
+		icon = icon("bar-chart"),
 		color = "orange", fill=TRUE
 	)
 })
 output$tbsBox <- renderInfoBox({
 	infoBox(
-		"TBS (M2-M1)", h1(finalfit::round_tidy(tbs(), 1)), icon = icon("bar-chart"),
+		"TBS (M2-M1)", h1(finalfit::round_tidy(tbs(), 1)), 
+		icon = icon("bar-chart"),
+		"Higher indicates greater net-benefit",
 		color = "orange", fill=TRUE
 	)
 })
@@ -317,5 +332,11 @@ output$tbsBox <- renderInfoBox({
 
 output$x1 = DT::renderDataTable(
 	DT::datatable(linear_prediction_active(),
-								options = list(paging = FALSE))
+								rownames=FALSE, extensions = "FixedColumns", 
+								options = list(#dom = 't', 
+									scrollX = TRUE, 
+									paging=FALSE,
+									fixedColumns = list(leftColumns = 1, rightColumns = 0),
+									searching = FALSE
+								))
 )

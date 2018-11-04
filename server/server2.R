@@ -27,7 +27,7 @@ observeEvent(input$reset_all, {
 	updateNumericInput(session, "rinr_tbs",
 										 value = 1.0)
 	updateNumericInput(session, "rcreatinine_tbs",
-										 value = 90)
+										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
 	updateNumericInput(session, "rsodium_tbs",
@@ -103,7 +103,7 @@ observeEvent(input$rreset, {
 	updateNumericInput(session, "rinr_tbs",
 										 value = 1.0)
 	updateNumericInput(session, "rcreatinine_tbs",
-										 value = 90)
+										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
 	updateNumericInput(session, "rsodium_tbs",
@@ -299,7 +299,7 @@ observeEvent(input$rcancer, {
 	updateNumericInput(session, "rinr_tbs",
 										 value = 1.0)
 	updateNumericInput(session, "rcreatinine_tbs",
-										 value = 90)
+										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
 	updateNumericInput(session, "rsodium_tbs",
@@ -357,7 +357,7 @@ observeEvent(input$rcancerclose, {
 	updateNumericInput(session, "rinr_tbs",
 										 value = 1.0)
 	updateNumericInput(session, "rcreatinine_tbs",
-										 value = 90)
+										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
 	updateNumericInput(session, "rsodium_tbs",
@@ -490,4 +490,55 @@ observeEvent(input$ddcdmarginal, {
 										 selected = 0)
 	updateRadioButtons(session, "splittable_tbs", 
 										 selected = 0)
+})
+
+
+
+# Decompensate ----
+observeEvent(input$decompensate, {
+	# First panel
+	updateNumericInput(session, "rwaiting_time_tbs",
+										 value=input$rwaiting_time_tbs + 30)
+	updateNumericInput(session, "rage_tbs",
+										 value=input$rage_tbs + 0.08)
+
+	# Second panel
+	updateNumericInput(session, "rbilirubin_tbs",
+										 value = input$rbilirubin_tbs + 5)
+	updateNumericInput(session, "rinr_tbs",
+										 value = input$rinr_tbs + 0.1)
+	updateNumericInput(session, "rcreatinine_tbs",
+										 value = input$rcreatinine_tbs + 5)
+	updateNumericInput(session, "rsodium_tbs",
+										 value = input$rsodium_tbs - 0.5)
+	updateNumericInput(session, "ralbumin_tbs",
+										 value = input$ralbumin_tbs - 0.2)
+})
+
+# Stable on list ----
+observeEvent(input$stable_on_list, {
+	# First panel
+	updateNumericInput(session, "rwaiting_time_tbs",
+										 value=input$rwaiting_time_tbs + 182)
+	updateNumericInput(session, "rage_tbs",
+										 value=input$rage_tbs + 0.5)
+})
+
+
+# Cancer growing ---- 
+# R cancer ----
+observeEvent(input$cancer_growing, {
+	# First panel
+	updateNumericInput(session, "rwaiting_time_tbs",
+										 value=input$rwaiting_time_tbs + 30)
+	updateNumericInput(session, "rage_tbs",
+										 value = input$rage_tbs + 0.08)
+	updateSelectInput(session, "rdisease_primary_tbs", 
+										selected = 1)
+	# Third panel cancer
+	updateNumericInput(session, "rmax_afp_tbs",
+										 value=input$rmax_afp_tbs + 5)
+	updateNumericInput(session, "rmax_tumour_size_tbs", 
+										 value = input$rmax_tumour_size_tbs + 0.2)
+	
 })

@@ -1,7 +1,7 @@
 # Donor
 wellPanel(
-	h3("Donor"),
-sliderInput("dage_tbs", "Donor age (years)", value=52, min = 5, max = 110, step = 1,
+	h2("Donor"),
+numericInput("dage_tbs", "Donor age (years)", value=52, min = 5, max = 110, step = 1,
 						 width = NULL),
 selectInput("dcause_tbs", label = "Cause of donor death", 
 						choices = list(	"Intracranial bleed/thrombosis" = 1,
@@ -9,7 +9,7 @@ selectInput("dcause_tbs", label = "Cause of donor death",
 														"Non-RTA trauma / suicide / accident" = 3,
 														"Other" = 4),
 						selected = 1, selectize=FALSE, width=NULL),
-sliderInput("dbmi_tbs", "Donor BMI", value=25, min = 10, max = 60, step = 1,
+numericInput("dbmi_tbs", "Donor BMI", value=25, min = 10, max = 60, step = 1,
 						 width = NULL),
 radioButtons("ddiabetes_tbs", label = "Donor diabetes", 
 						 choices = list("No" = 1, "Yes" = 2, "Unknown" = 3),

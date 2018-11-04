@@ -5,8 +5,9 @@ account: eharrison
 server: argoshare.is.ed.ac.uk
 hostUrl: https://argoshare.is.ed.ac.uk/__api__
 appId: 70
-bundleId: 193
+bundleId: 214
 url: https://argoshare.is.ed.ac.uk/tbs/
-when: 1540713604.88229
+when: 1541344177.35323
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: app_dev.R|Liver TBS calculator v 1 4 d.xlsx

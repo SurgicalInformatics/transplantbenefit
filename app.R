@@ -48,15 +48,25 @@ ui <- dashboardPage(
 						 	actionButton("dmodrisk", "DBD moderate"),
 						 	actionButton("dmarginal", "DBD marginal"),
 						 	actionButton("ddcdgood", "DCD good"),
-						 	actionButton("ddcdmarginal", "DCD marginal")
-						 	
-						 
-						 ),
-						 infoBoxOutput("ukeldBox", width=12),
+						 	actionButton("ddcdmarginal", "DCD marginal"),
+						 	tags$h4("Change over time (keep clicking)"),
+						 	actionButton("decompensate", "Decompensate (click 1 mth)"),
+						 	actionButton("stable_on_list", "Stable on list (click 6 mths)"),
+						 	actionButton("cancer_growing", "HCC grows (click 2 mm/mth)")
+					
+						 )
+
+			),
+			column(2,
 						 infoBoxOutput("m1Box", width=12),
 						 infoBoxOutput("m2Box", width=12),
-						 infoBoxOutput("tbsBox", width=12)
-						 #source(file.path("ui", "ui_output1.R"))$value
+						 infoBoxOutput("tbsBox", width=12),
+						 infoBoxOutput("ukeldBox", width=12)
+						 ),
+			column(2,
+						 plotOutput("hist_m1", height=200),
+						 plotOutput("hist_m2", height=200),
+						 plotOutput("hist_tbs", height=200)
 			)
 		),
 		fluidRow(
@@ -74,6 +84,7 @@ server <- function(input, output, session) {
 	source(file.path("server", "server1.R"),  local = TRUE)$value
 	source(file.path("server", "server2.R"),  local = TRUE)$value
 	source(file.path("server", "server3.R"),  local = TRUE)$value
+	source(file.path("server", "server4.R"),  local = TRUE)$value
 }
 
 # Run the application 

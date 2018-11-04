@@ -1,5 +1,5 @@
 library(readxl)
-library(tidyverse)
+library(dplyr)
 
 # Import beta coefficients for linear predictor
 ## Get data

@@ -1,7 +1,7 @@
 # UKELD ----
 ukeld = reactive({
 	bil_ukeld = max(input$rbilirubin_tbs, 1)
-	creat_ukeld = min(max(input$rcreatinine_tbs, 1), 400)
+	creat_ukeld = min(max(rcreatinine(), 1), 400)
 	inr_ukeld = max(input$rinr_tbs, 1)
 	na_ukeld = input$rsodium_tbs
 	components = paste("Bil", round(bil_ukeld, 0), "umol/L |",
