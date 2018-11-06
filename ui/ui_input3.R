@@ -4,8 +4,8 @@ conditionalPanel(
 	input.rdisease_secondary_tbs == 1 ||
 	input.rdisease_tertiary_tbs == 1",
 	wellPanel(
-		h3("Cancer"),
-		sliderInput("rmax_afp_tbs", label = "aFP maximum", value=5, min = 0, max = 500000, step = 1,
+		h4("Cancer"),
+		sliderInput("rmax_afp_tbs", label = "aFP maximum", value=5, min = 0, max = 1000, step = 1,
 								 width = NULL),
 		selectInput("rtumour_number_tbs", label = "Number of tumours", 
 								choices = list("One tumour" = 1, 

@@ -5,9 +5,9 @@ observeEvent(input$reset_all, {
 										 selected = 0)
 	updateSelectInput(session, "rregistration_tbs", 
 										selected = 1)
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=52)
 	updateRadioButtons(session, "rgender_tbs",
 										 selected=0)
@@ -17,24 +17,24 @@ observeEvent(input$reset_all, {
 										selected = 9)
 	updateSelectInput(session, "rdisease_tertiary_tbs", 
 										selected = 9)
-	updateNumericInput(session, "previous_tx_tbs",
+	updateSliderInput(session, "previous_tx_tbs",
 										 value = 0)
 	updateRadioButtons(session, "rprevious_surgery_tbs",
 										 selected = 0)
 	# Second panel
-	updateNumericInput(session, "rbilirubin_tbs",
+	updateSliderInput(session, "rbilirubin_tbs",
 										 value = 20)
-	updateNumericInput(session, "rinr_tbs",
+	updateSliderInput(session, "rinr_tbs",
 										 value = 1.0)
-	updateNumericInput(session, "rcreatinine_tbs",
+	updateSliderInput(session, "rcreatinine_tbs",
 										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
-	updateNumericInput(session, "rsodium_tbs",
+	updateSliderInput(session, "rsodium_tbs",
 										 value = 135)
-	updateNumericInput(session, "rpotassium_tbs",
+	updateSliderInput(session, "rpotassium_tbs",
 										 value = 4.5)
-	updateNumericInput(session, "ralbumin_tbs",
+	updateSliderInput(session, "ralbumin_tbs",
 										 value = 30)
 	updateRadioButtons(session, "rencephalopathy_tbs",
 										 selected = 0)
@@ -44,19 +44,19 @@ observeEvent(input$reset_all, {
 										 selected = 0)
 	
 	# Third panel cancer
-	updateNumericInput(session, "rmax_afp_tbs",
+	updateSliderInput(session, "rmax_afp_tbs",
 										 value=5)
 	updateSelectInput(session, "rtumour_number_tbs",
 										selected = 1)
-	updateNumericInput(session, "rmax_tumour_size_tbs", 
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
 										 value = 1)
 	
 	# Fourth panel
-	updateNumericInput(session, "dage_tbs", 
+	updateSliderInput(session, "dage_tbs", 
 										 value=52)
 	updateSelectInput(session, "dcause_tbs", 
 										selected = 1)
-	updateNumericInput(session, "dbmi_tbs", 
+	updateSliderInput(session, "dbmi_tbs", 
 										 value=25)
 	updateRadioButtons(session, "ddiabetes_tbs", 
 										 selected = 1)
@@ -81,9 +81,9 @@ observeEvent(input$rreset, {
 										 selected = 0)
 	updateSelectInput(session, "rregistration_tbs", 
 										selected = 1)
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=52)
 	updateRadioButtons(session, "rgender_tbs",
 										 selected=0)
@@ -93,24 +93,24 @@ observeEvent(input$rreset, {
 										selected = 9)
 	updateSelectInput(session, "rdisease_tertiary_tbs", 
 										selected = 9)
-	updateNumericInput(session, "previous_tx_tbs",
+	updateSliderInput(session, "previous_tx_tbs",
 										 value = 0)
 	updateRadioButtons(session, "rprevious_surgery_tbs",
 										 selected = 0)
 	# Second panel
-	updateNumericInput(session, "rbilirubin_tbs",
+	updateSliderInput(session, "rbilirubin_tbs",
 										 value = 20)
-	updateNumericInput(session, "rinr_tbs",
+	updateSliderInput(session, "rinr_tbs",
 										 value = 1.0)
-	updateNumericInput(session, "rcreatinine_tbs",
+	updateSliderInput(session, "rcreatinine_tbs",
 										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
-	updateNumericInput(session, "rsodium_tbs",
+	updateSliderInput(session, "rsodium_tbs",
 										 value = 135)
-	updateNumericInput(session, "rpotassium_tbs",
+	updateSliderInput(session, "rpotassium_tbs",
 										 value = 4.5)
-	updateNumericInput(session, "ralbumin_tbs",
+	updateSliderInput(session, "ralbumin_tbs",
 										 value = 30)
 	updateRadioButtons(session, "rencephalopathy_tbs",
 										 selected = 0)
@@ -120,11 +120,11 @@ observeEvent(input$rreset, {
 										 selected = 0)
 	
 	# Third panel cancer
-	updateNumericInput(session, "rmax_afp_tbs",
+	updateSliderInput(session, "rmax_afp_tbs",
 										 value=5)
 	updateSelectInput(session, "rtumour_number_tbs",
 										selected = 1)
-	updateNumericInput(session, "rmax_tumour_size_tbs", 
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
 										 value = 1)
 })
 
@@ -132,11 +132,11 @@ observeEvent(input$rreset, {
 observeEvent(input$dreset, {
 	
 	# Fourth panel
-	updateNumericInput(session, "dage_tbs", 
+	updateSliderInput(session, "dage_tbs", 
 										 value=52)
 	updateSelectInput(session, "dcause_tbs", 
 										selected = 1)
-	updateNumericInput(session, "dbmi_tbs", 
+	updateSliderInput(session, "dbmi_tbs", 
 										 value=25)
 	updateRadioButtons(session, "ddiabetes_tbs", 
 										 selected = 1)
@@ -157,9 +157,9 @@ observeEvent(input$rhighrisk, {
 										 selected = 0)
 	updateSelectInput(session, "rregistration_tbs", 
 										selected = 1)
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=65)
 	updateRadioButtons(session, "rgender_tbs",
 										 selected=0)
@@ -169,24 +169,24 @@ observeEvent(input$rhighrisk, {
 										selected = 9)
 	updateSelectInput(session, "rdisease_tertiary_tbs", 
 										selected = 9)
-	updateNumericInput(session, "previous_tx_tbs",
+	updateSliderInput(session, "previous_tx_tbs",
 										 value = 0)
 	updateRadioButtons(session, "rprevious_surgery_tbs",
 										 selected = 0)
 	# Second panel
-	updateNumericInput(session, "rbilirubin_tbs",
+	updateSliderInput(session, "rbilirubin_tbs",
 										 value = 100)
-	updateNumericInput(session, "rinr_tbs",
+	updateSliderInput(session, "rinr_tbs",
 										 value = 1.5)
-	updateNumericInput(session, "rcreatinine_tbs",
+	updateSliderInput(session, "rcreatinine_tbs",
 										 value = 90)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
-	updateNumericInput(session, "rsodium_tbs",
+	updateSliderInput(session, "rsodium_tbs",
 										 value = 130)
-	updateNumericInput(session, "rpotassium_tbs",
+	updateSliderInput(session, "rpotassium_tbs",
 										 value = 4.5)
-	updateNumericInput(session, "ralbumin_tbs",
+	updateSliderInput(session, "ralbumin_tbs",
 										 value = 25)
 	updateRadioButtons(session, "rencephalopathy_tbs",
 										 selected = 0)
@@ -196,11 +196,11 @@ observeEvent(input$rhighrisk, {
 										 selected = 0)
 	
 	# Third panel cancer
-	updateNumericInput(session, "rmax_afp_tbs",
+	updateSliderInput(session, "rmax_afp_tbs",
 										 value=5)
 	updateSelectInput(session, "rtumour_number_tbs",
 										selected = 1)
-	updateNumericInput(session, "rmax_tumour_size_tbs", 
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
 										 value = 1)
 
 })
@@ -217,9 +217,9 @@ observeEvent(input$rveryhighrisk, {
 										 selected = 1)
 	updateSelectInput(session, "rregistration_tbs", 
 										selected = 1)
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=65)
 	updateRadioButtons(session, "rgender_tbs",
 										 selected=0)
@@ -229,24 +229,24 @@ observeEvent(input$rveryhighrisk, {
 										selected = 9)
 	updateSelectInput(session, "rdisease_tertiary_tbs", 
 										selected = 9)
-	updateNumericInput(session, "previous_tx_tbs",
+	updateSliderInput(session, "previous_tx_tbs",
 										 value = 0)
 	updateRadioButtons(session, "rprevious_surgery_tbs",
 										 selected = 1)
 	# Second panel
-	updateNumericInput(session, "rbilirubin_tbs",
+	updateSliderInput(session, "rbilirubin_tbs",
 										 value = 120)
-	updateNumericInput(session, "rinr_tbs",
+	updateSliderInput(session, "rinr_tbs",
 										 value = 1.7)
-	updateNumericInput(session, "rcreatinine_tbs",
+	updateSliderInput(session, "rcreatinine_tbs",
 										 value = 110)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
-	updateNumericInput(session, "rsodium_tbs",
+	updateSliderInput(session, "rsodium_tbs",
 										 value = 125)
-	updateNumericInput(session, "rpotassium_tbs",
+	updateSliderInput(session, "rpotassium_tbs",
 										 value = 4.5)
-	updateNumericInput(session, "ralbumin_tbs",
+	updateSliderInput(session, "ralbumin_tbs",
 										 value = 25)
 	updateRadioButtons(session, "rencephalopathy_tbs",
 										 selected = 1)
@@ -256,11 +256,11 @@ observeEvent(input$rveryhighrisk, {
 										 selected = 0)
 	
 	# Third panel cancer
-	updateNumericInput(session, "rmax_afp_tbs",
+	updateSliderInput(session, "rmax_afp_tbs",
 										 value=5)
 	updateSelectInput(session, "rtumour_number_tbs",
 										selected = 1)
-	updateNumericInput(session, "rmax_tumour_size_tbs", 
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
 										 value = 1)
 	
 })
@@ -277,9 +277,9 @@ observeEvent(input$rcancer, {
 										 selected = 0)
 	updateSelectInput(session, "rregistration_tbs", 
 										selected = 1)
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=52)
 	updateRadioButtons(session, "rgender_tbs",
 										 selected=0)
@@ -289,24 +289,24 @@ observeEvent(input$rcancer, {
 										selected = 9)
 	updateSelectInput(session, "rdisease_tertiary_tbs", 
 										selected = 9)
-	updateNumericInput(session, "previous_tx_tbs",
+	updateSliderInput(session, "previous_tx_tbs",
 										 value = 0)
 	updateRadioButtons(session, "rprevious_surgery_tbs",
 										 selected = 0)
 	# Second panel
-	updateNumericInput(session, "rbilirubin_tbs",
+	updateSliderInput(session, "rbilirubin_tbs",
 										 value = 20)
-	updateNumericInput(session, "rinr_tbs",
+	updateSliderInput(session, "rinr_tbs",
 										 value = 1.0)
-	updateNumericInput(session, "rcreatinine_tbs",
+	updateSliderInput(session, "rcreatinine_tbs",
 										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
-	updateNumericInput(session, "rsodium_tbs",
+	updateSliderInput(session, "rsodium_tbs",
 										 value = 135)
-	updateNumericInput(session, "rpotassium_tbs",
+	updateSliderInput(session, "rpotassium_tbs",
 										 value = 4.5)
-	updateNumericInput(session, "ralbumin_tbs",
+	updateSliderInput(session, "ralbumin_tbs",
 										 value = 30)
 	updateRadioButtons(session, "rencephalopathy_tbs",
 										 selected = 0)
@@ -316,11 +316,11 @@ observeEvent(input$rcancer, {
 										 selected = 0)
 	
 	# Third panel cancer
-	updateNumericInput(session, "rmax_afp_tbs",
+	updateSliderInput(session, "rmax_afp_tbs",
 										 value=5)
 	updateSelectInput(session, "rtumour_number_tbs",
 										selected = 1)
-	updateNumericInput(session, "rmax_tumour_size_tbs", 
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
 										 value = 2)
 	
 })
@@ -335,9 +335,9 @@ observeEvent(input$rcancerclose, {
 										 selected = 0)
 	updateSelectInput(session, "rregistration_tbs", 
 										selected = 1)
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=52)
 	updateRadioButtons(session, "rgender_tbs",
 										 selected=0)
@@ -347,24 +347,24 @@ observeEvent(input$rcancerclose, {
 										selected = 9)
 	updateSelectInput(session, "rdisease_tertiary_tbs", 
 										selected = 9)
-	updateNumericInput(session, "previous_tx_tbs",
+	updateSliderInput(session, "previous_tx_tbs",
 										 value = 0)
 	updateRadioButtons(session, "rprevious_surgery_tbs",
 										 selected = 0)
 	# Second panel
-	updateNumericInput(session, "rbilirubin_tbs",
+	updateSliderInput(session, "rbilirubin_tbs",
 										 value = 20)
-	updateNumericInput(session, "rinr_tbs",
+	updateSliderInput(session, "rinr_tbs",
 										 value = 1.0)
-	updateNumericInput(session, "rcreatinine_tbs",
+	updateSliderInput(session, "rcreatinine_tbs",
 										 value = 70)
 	updateRadioButtons(session, "rrenal_tbs",
 										 selected = 0)
-	updateNumericInput(session, "rsodium_tbs",
+	updateSliderInput(session, "rsodium_tbs",
 										 value = 135)
-	updateNumericInput(session, "rpotassium_tbs",
+	updateSliderInput(session, "rpotassium_tbs",
 										 value = 4.5)
-	updateNumericInput(session, "ralbumin_tbs",
+	updateSliderInput(session, "ralbumin_tbs",
 										 value = 30)
 	updateRadioButtons(session, "rencephalopathy_tbs",
 										 selected = 0)
@@ -374,11 +374,11 @@ observeEvent(input$rcancerclose, {
 										 selected = 0)
 	
 	# Third panel cancer
-	updateNumericInput(session, "rmax_afp_tbs",
+	updateSliderInput(session, "rmax_afp_tbs",
 										 value=90)
 	updateSelectInput(session, "rtumour_number_tbs",
 										selected = 3)
-	updateNumericInput(session, "rmax_tumour_size_tbs", 
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
 										 value = 2.9)
 	
 })
@@ -391,11 +391,11 @@ observeEvent(input$rcancerclose, {
 observeEvent(input$dlowrisk, {
 
 	# Fourth panel
-	updateNumericInput(session, "dage_tbs", 
+	updateSliderInput(session, "dage_tbs", 
 										 value=30)
 	updateSelectInput(session, "dcause_tbs", 
-										selected = 2)
-	updateNumericInput(session, "dbmi_tbs", 
+										selected = 3)
+	updateSliderInput(session, "dbmi_tbs", 
 										 value=25)
 	updateRadioButtons(session, "ddiabetes_tbs", 
 										 selected = 1)
@@ -412,11 +412,11 @@ observeEvent(input$dlowrisk, {
 observeEvent(input$dmodrisk, {
 	
 	# Fourth panel
-	updateNumericInput(session, "dage_tbs", 
+	updateSliderInput(session, "dage_tbs", 
 										 value=60)
 	updateSelectInput(session, "dcause_tbs", 
 										selected = 1)
-	updateNumericInput(session, "dbmi_tbs", 
+	updateSliderInput(session, "dbmi_tbs", 
 										 value=30)
 	updateRadioButtons(session, "ddiabetes_tbs", 
 										 selected = 2)
@@ -434,11 +434,11 @@ observeEvent(input$dmodrisk, {
 observeEvent(input$dmarginal, {
 	
 	# Fourth panel
-	updateNumericInput(session, "dage_tbs", 
+	updateSliderInput(session, "dage_tbs", 
 										 value=75)
 	updateSelectInput(session, "dcause_tbs", 
 										selected = 1)
-	updateNumericInput(session, "dbmi_tbs", 
+	updateSliderInput(session, "dbmi_tbs", 
 										 value=40)
 	updateRadioButtons(session, "ddiabetes_tbs", 
 										 selected = 2)
@@ -455,11 +455,11 @@ observeEvent(input$dmarginal, {
 observeEvent(input$ddcdgood, {
 	
 	# Fourth panel
-	updateNumericInput(session, "dage_tbs", 
-										 value=45)
+	updateSliderInput(session, "dage_tbs", 
+										 value=40)
 	updateSelectInput(session, "dcause_tbs", 
-										selected = 2)
-	updateNumericInput(session, "dbmi_tbs", 
+										selected = 3)
+	updateSliderInput(session, "dbmi_tbs", 
 										 value=25)
 	updateRadioButtons(session, "ddiabetes_tbs", 
 										 selected = 1)
@@ -476,11 +476,11 @@ observeEvent(input$ddcdgood, {
 observeEvent(input$ddcdmarginal, {
 	
 	# Fourth panel
-	updateNumericInput(session, "dage_tbs", 
+	updateSliderInput(session, "dage_tbs", 
 										 value=65)
 	updateSelectInput(session, "dcause_tbs", 
 										selected = 1)
-	updateNumericInput(session, "dbmi_tbs", 
+	updateSliderInput(session, "dbmi_tbs", 
 										 value=30)
 	updateRadioButtons(session, "ddiabetes_tbs", 
 										 selected = 2)
@@ -497,30 +497,30 @@ observeEvent(input$ddcdmarginal, {
 # Decompensate ----
 observeEvent(input$decompensate, {
 	# First panel
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=input$rwaiting_time_tbs + 30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=input$rage_tbs + 0.08)
 
 	# Second panel
-	updateNumericInput(session, "rbilirubin_tbs",
+	updateSliderInput(session, "rbilirubin_tbs",
 										 value = input$rbilirubin_tbs + 5)
-	updateNumericInput(session, "rinr_tbs",
+	updateSliderInput(session, "rinr_tbs",
 										 value = input$rinr_tbs + 0.1)
-	updateNumericInput(session, "rcreatinine_tbs",
+	updateSliderInput(session, "rcreatinine_tbs",
 										 value = input$rcreatinine_tbs + 5)
-	updateNumericInput(session, "rsodium_tbs",
+	updateSliderInput(session, "rsodium_tbs",
 										 value = input$rsodium_tbs - 0.5)
-	updateNumericInput(session, "ralbumin_tbs",
+	updateSliderInput(session, "ralbumin_tbs",
 										 value = input$ralbumin_tbs - 0.2)
 })
 
 # Stable on list ----
 observeEvent(input$stable_on_list, {
 	# First panel
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=input$rwaiting_time_tbs + 182)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value=input$rage_tbs + 0.5)
 })
 
@@ -529,16 +529,17 @@ observeEvent(input$stable_on_list, {
 # R cancer ----
 observeEvent(input$cancer_growing, {
 	# First panel
-	updateNumericInput(session, "rwaiting_time_tbs",
+	updateSliderInput(session, "rwaiting_time_tbs",
 										 value=input$rwaiting_time_tbs + 30)
-	updateNumericInput(session, "rage_tbs",
+	updateSliderInput(session, "rage_tbs",
 										 value = input$rage_tbs + 0.08)
 	updateSelectInput(session, "rdisease_primary_tbs", 
 										selected = 1)
 	# Third panel cancer
-	updateNumericInput(session, "rmax_afp_tbs",
+	updateSliderInput(session, "rmax_afp_tbs",
 										 value=input$rmax_afp_tbs + 5)
-	updateNumericInput(session, "rmax_tumour_size_tbs", 
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
 										 value = input$rmax_tumour_size_tbs + 0.2)
 	
 })
+

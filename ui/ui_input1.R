@@ -1,5 +1,5 @@
 wellPanel(
-	h3("Recipient details"),
+	h4("Recipient details"),
 	fluidRow(
 		column(6,
 					selectInput("centre_tbs", label = "Centre", 
@@ -29,7 +29,7 @@ wellPanel(
 	sliderInput("rwaiting_time_tbs", "Waiting time (days)", value=30, min = 0, max = 2000, step = 1,
 							 width = NULL),
 
-	sliderInput("rage_tbs", "Recipient age (years)", value=52, min = 12, max = 90, step = 1,
+	sliderInput("rage_tbs", "Recipient age (years)", value=52, min = 12, max = 90, step = 0.5,
 							 width = NULL),
 	radioButtons("rgender_tbs", label = "Sex", 
 							 choices = list("Male" = 0, 

@@ -71,7 +71,11 @@ ui <- dashboardPage(
 		),
 		fluidRow(
 			column(12,
-						 DT::dataTableOutput("x1"))
+						 checkboxInput("data_table", label = "Show data table", FALSE),
+						 conditionalPanel(
+						 	condition = 'input.data_table == true',
+						 	DT::dataTableOutput("x1"))
+			)
 		)
 	)
 )
