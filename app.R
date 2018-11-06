@@ -32,7 +32,7 @@ ui <- dashboardPage(
 						 source(file.path("ui", "ui_input3.R"))$value,
 						 source(file.path("ui", "ui_input4.R"))$value
 			),
-			column(2,
+			column(3,
 						 wellPanel(
 						 	tags$h4("Reset"),
 						 	actionButton("reset_all", "All"),
@@ -53,20 +53,21 @@ ui <- dashboardPage(
 						 	actionButton("decompensate", "Decompensate (click 1 mth)"),
 						 	actionButton("stable_on_list", "Stable on list (click 6 mths)"),
 						 	actionButton("cancer_growing", "HCC grows (click 2 mm/mth)")
-					
-						 )
-
-			),
-			column(2,
+						 ),
 						 infoBoxOutput("m1Box", width=12),
 						 infoBoxOutput("m2Box", width=12),
-						 infoBoxOutput("tbsBox", width=12),
-						 infoBoxOutput("ukeldBox", width=12)
-						 ),
-			column(2,
-						 plotOutput("hist_m1", height=200),
-						 plotOutput("hist_m2", height=200),
-						 plotOutput("hist_tbs", height=200)
+						 infoBoxOutput("tbsBox", width=12)
+						 
+			),
+			column(3,
+						 infoBoxOutput("ukeldBox", width=12),
+						 box(
+						 	plotOutput("hist_m1", height=200),
+						 	plotOutput("hist_m2", height=200),
+						 	plotOutput("hist_tbs", height=200), 
+						 	title = "Population comparison",
+						 	width=12,
+						 	collapsible = TRUE)
 			)
 		),
 		fluidRow(

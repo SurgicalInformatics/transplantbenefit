@@ -18,11 +18,11 @@ fluidRow(
 	column(6,
 				 radioButtons("dtype_tbs", label = "Donor", 
 				 						 choices = list("DBD" = 0, "DCD" = 1),
-				 						 selected = 0, width=NULL, inline=TRUE)),
+				 						 selected = 0, width=NULL, inline=FALSE)),
 	column(6, 
 				 radioButtons("splittable_tbs", label = "Splittable", 
 				 						 choices = list("No" = 0, "Yes" = 1),
-				 						 selected = 0, width=NULL, inline=TRUE))
+				 						 selected = 0, width=NULL, inline=FALSE))
 ),
 radioButtons("bloodgroup_compatible_tbs", label = "Blood group matched", 
 						 choices = list("No" = 1, "Yes" = 0),
