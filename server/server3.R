@@ -29,3 +29,66 @@ output$ukeldBox <- renderInfoBox({
 		color = ukeld_status(), fill=TRUE
 	)
 })
+
+# MELD ----
+standard_meld = reactive({
+	creat_mg = ifelse(input$rrenal_tbs == 0, rcreatinine()/88.42, 4)
+	bil_meld = max(input$rbilirubin_tbs/17.1, 1)
+	creat_meld = min(max(creat_mg, 1), 4)
+	inr_meld = max(input$rinr_tbs, 1) 
+	components = paste("Bilirubin", round(bil_meld, 1), "mg/dL |",
+										 "Creatinine", round(creat_meld, 1), "mg/dL |",
+										 "INR", round(inr_meld, 1), "IU"
+	)
+	standard_meld = round(
+		(11.2 * log(inr_meld)) + 
+			(9.57 * log(creat_meld)) +
+			(3.78 * log(bil_meld)) + 
+			6.43,
+		0)
+	return(list(standard_meld, components))
+})
+standard_meld_status = reactive({
+	ifelse(standard_meld()[[1]] >35, "red", 
+				 ifelse(standard_meld()[[1]] >11, "orange", "green"))
+})
+
+output$meldBox <- renderInfoBox({
+	infoBox(
+		"MELD", h1(standard_meld()[[1]]), standard_meld()[[2]], icon = icon("bar-chart"),
+		color = standard_meld_status(), fill=TRUE
+	)
+})
+
+
+# MELD-Na ----
+meld_na = reactive({
+	creat_mg = ifelse(input$rrenal_tbs == 0, rcreatinine()/88.42, 4)
+	bil_meld = max(input$rbilirubin_tbs/17.1, 1)
+	creat_meld = min(max(creat_mg, 1), 4)
+	inr_meld = max(input$rinr_tbs, 1) 
+	na_meld = min(max(input$rsodium_tbs, 125), 140)
+	components = paste("Bilirubin", round(bil_meld, 1), "mg/dL |",
+										 "Creatinine", round(creat_meld, 1), "mg/dL |",
+										 "INR", round(inr_meld, 1), "IU |",
+										 "Na", na_meld, "mmol/L"
+	)
+	meld_na = round(
+		standard_meld()[[1]] - 
+			na_meld - 
+			(0.025 * standard_meld()[[1]] * (140 - na_meld)) +
+			140,
+		0)
+	return(list(meld_na, components))
+})
+meld_na_status = reactive({
+	ifelse(meld_na()[[1]] >35, "red", 
+				 ifelse(meld_na()[[1]] >11, "orange", "green"))
+})
+
+output$meldnaBox <- renderInfoBox({
+	infoBox(
+		"MELD-Sodium (MELD-Na)", h1(meld_na()[[1]]), meld_na()[[2]], icon = icon("bar-chart"),
+		color = meld_na_status(), fill=TRUE
+	)
+})

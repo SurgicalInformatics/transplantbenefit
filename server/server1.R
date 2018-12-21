@@ -232,11 +232,11 @@ surv_noncancer = readr::read_csv("surv_noncancer.csv")
 # Make big prediction table
 linear_prediction = reactive({
 	dplyr::bind_cols(betas, x1(), x2()) %>% 
-	mutate(transformed_x1 = raw_x1^power,
-				 transformed_x1 = ifelse(ln_1 == 1, log(transformed_x1), transformed_x1),
-				 transformed_x2 = raw_x2^power,
-				 transformed_x2 = ifelse(ln_2 == 1, log(transformed_x2), transformed_x2)
-	)
+		mutate(transformed_x1 = raw_x1^power,
+					 transformed_x1 = ifelse(ln_1 == 1, log(transformed_x1), transformed_x1),
+					 transformed_x2 = raw_x2^power,
+					 transformed_x2 = ifelse(ln_2 == 1, log(transformed_x2), transformed_x2)
+		)
 })
 
 # Select now on cancer or not
@@ -264,8 +264,8 @@ linear_prediction_noncancer = reactive({
 
 linear_prediction_active = reactive({
 	if(any(input$rdisease_primary_tbs == 1, 
-		 input$rdisease_secondary_tbs == 1,
-		 input$rdisease_tertiary_tbs == 1)){
+				 input$rdisease_secondary_tbs == 1,
+				 input$rdisease_tertiary_tbs == 1)){
 		out = linear_prediction_cancer()
 	}else{
 		out = linear_prediction_noncancer()

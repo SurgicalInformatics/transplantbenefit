@@ -148,6 +148,62 @@ observeEvent(input$dreset, {
 										 selected = 0)
 })
 
+# R mod risk ----
+observeEvent(input$rmodrisk, {
+	# First panel
+	updateRadioButtons(session, "rinpatient_tbs",
+										 selected = 0)
+	updateSelectInput(session, "rregistration_tbs", 
+										selected = 1)
+	updateSliderInput(session, "rwaiting_time_tbs",
+										value=68)
+	updateSliderInput(session, "rage_tbs",
+										value=52)
+	updateRadioButtons(session, "rgender_tbs",
+										 selected=1)
+	updateSelectInput(session, "rdisease_primary_tbs", 
+										selected = 8)
+	updateSelectInput(session, "rdisease_secondary_tbs", 
+										selected = 9)
+	updateSelectInput(session, "rdisease_tertiary_tbs", 
+										selected = 9)
+	updateSliderInput(session, "previous_tx_tbs",
+										value = 0)
+	updateRadioButtons(session, "rprevious_surgery_tbs",
+										 selected = 0)
+	# Second panel
+	updateSliderInput(session, "rbilirubin_tbs",
+										value = 74)
+	updateSliderInput(session, "rinr_tbs",
+										value = 1.2)
+	updateSliderInput(session, "rcreatinine_tbs",
+										value = 63)
+	updateRadioButtons(session, "rrenal_tbs",
+										 selected = 0)
+	updateSliderInput(session, "rsodium_tbs",
+										value = 138)
+	updateSliderInput(session, "rpotassium_tbs",
+										value = 4.1)
+	updateSliderInput(session, "ralbumin_tbs",
+										value = 31)
+	updateRadioButtons(session, "rencephalopathy_tbs",
+										 selected = 0)
+	updateRadioButtons(session, "rascites_tbs",
+										 selected = 0)
+	updateRadioButtons(session, "rdiabetes_tbs",
+										 selected = 0)
+	
+	# Third panel cancer
+	updateSliderInput(session, "rmax_afp_tbs",
+										value=5)
+	updateSelectInput(session, "rtumour_number_tbs",
+										selected = 1)
+	updateSliderInput(session, "rmax_tumour_size_tbs", 
+										value = 1)
+	
+})
+
+
 
 
 # R high risk ----
