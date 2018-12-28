@@ -1,4 +1,5 @@
 box(title = "References", status = "info", width=12,
+		"Version 0.10",br(),
 		a(href="https://www.odt.nhs.uk/transplantation/tools-policies-and-guidance/policies-and-guidance/",
 			"NHSBT Liver selection policy 18/07/2018", target="_blank"),br(),
 		a(href="http://www.ncbi.nlm.nih.gov/pubmed/10733541", "MELD", target="_blank"),br(),
