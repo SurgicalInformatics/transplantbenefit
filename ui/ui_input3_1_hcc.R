@@ -1,5 +1,5 @@
 wellPanel(
-	h4("HCC"),
+	h3("HCC"),
 	sliderInput("hcc_n", label = "Number of tumours", min = 1, max = 10, value = 1, step=1),
 	sliderInput("hcc_size", label = "Size of largest tumour (cm)", min = 0.5, max = 8, value = 1, 
 							step=0.1),

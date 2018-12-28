@@ -1,5 +1,5 @@
 wellPanel(
-	h4("Recipient UKELD"),
+	h4("Recipient"),
 	sliderInput("rbilirubin_tbs", "Bilirubin (umol/L)", value=20, min = 10, max = 500, step = 1,
 							width = NULL),
 	sliderInput("rinr_tbs", "INR", value=1.0, min = 0.4, max = 10, step = 0.1,

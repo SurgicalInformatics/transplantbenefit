@@ -137,8 +137,7 @@ uk_alf <- reactive({
 		inr = cut(inr2(), c(0, 4, 20), c("<=4 IU", ">4 IU"))
 		components = paste0("INR ", inr, " | Encephalopathy ", input$enceph2)
 		uk_alf = ifelse(
-			inr == ">4 IU" |  
-				(input$enceph2 == "Grade 1-2" | input$enceph2 == "Grade 3-4"), "Indicated (cat 20)", "Not indicated")
+			inr == ">4 IU" | input$enceph2 == "Grade 3-4", "Indicated (cat 20)", "Not indicated")
 		return(list(uk_alf, components))
 	}
 })

@@ -1,6 +1,8 @@
+# TBS calculation
+
 # Define variables 
-# Make rdisease_group
-## Cascading ifelses I'm sure could be replaced with something better
+## Make rdisease_group
+### Cascading ifelses I'm sure could be replaced with something better
 rdisease_group = reactive({
 	ifelse(input$previous_tx_tbs>0, 10,
 				 ifelse(any(
@@ -53,7 +55,7 @@ rdisease_group = reactive({
 	)
 })
 
-# Make rhcv
+## Make rhcv
 rhcv = reactive({
 	ifelse(any(
 		input$rdisease_primary_tbs == 2,
@@ -63,10 +65,10 @@ rhcv = reactive({
 		0)
 })
 
-# Make factor with levels>2 vectors
-## This is coded badly in the .xlsx
-## Alcohol==3 actually becomes 1. 
-## Therefore drop the second element of the vector
+## Make factor with levels>2 vectors
+### This is coded badly in the .xlsx
+### Alcohol==3 actually becomes 1. 
+### Therefore drop the second element of the vector
 rdisease_vec = reactive({
 	out = group2dummy(10, rdisease_group())
 	out = out[-2]
@@ -88,7 +90,7 @@ dcause_vec = reactive({
 	group2dummy(4, as.numeric(input$dcause_tbs))
 })
 
-# Fix this funny Royal Free creatinine thing
+## Fix this funny Royal Free creatinine thing
 rcreatinine = reactive({
 	if(input$centre_tbs == "3"){
 		out = (input$rcreatinine_tbs + 23.4) / 1.2
@@ -225,9 +227,9 @@ x2 = reactive({
 })
 
 # Load table of coefficients and survival functions
-betas = readr::read_csv("betas.csv")
-surv_cancer = readr::read_csv("surv_cancer.csv")
-surv_noncancer = readr::read_csv("surv_noncancer.csv")
+betas = readr::read_csv("data/betas.csv")
+surv_cancer = readr::read_csv("data/surv_cancer.csv")
+surv_noncancer = readr::read_csv("data/surv_noncancer.csv")
 
 # Make big prediction table
 linear_prediction = reactive({

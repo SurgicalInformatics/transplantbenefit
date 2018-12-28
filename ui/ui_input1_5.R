@@ -1,0 +1,22 @@
+wellPanel(
+	tags$h4("Reset values"),
+	actionButton("reset_all", "All"),
+	actionButton("rreset", "Recipient"),
+	actionButton("dreset", "Donor"),
+	tags$h4("Examples: recipient"),
+	actionButton("rmodrisk", "Mod risk"),
+	actionButton("rhighrisk", "High risk"),
+	actionButton("rveryhighrisk", "V high risk"),
+	actionButton("rcancer", "HCC early"),
+	actionButton("rcancerclose", "HCC at criteria"),
+	tags$h4("Examples: donor"),
+	actionButton("dlowrisk", "DBD good"),
+	actionButton("dmodrisk", "DBD moderate"),
+	actionButton("dmarginal", "DBD marginal"),
+	actionButton("ddcdgood", "DCD good"),
+	actionButton("ddcdmarginal", "DCD marginal"),
+	tags$h4("Examples: change over time"),
+	actionButton("decompensate", "Decompensate (click 1 mth)"),
+	actionButton("stable_on_list", "Stable on list (click 6 mths)"),
+	actionButton("cancer_growing", "HCC grows (click 2 mm/mth)")
+)

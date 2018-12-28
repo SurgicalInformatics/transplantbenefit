@@ -1,5 +1,5 @@
 wellPanel(
-	h4("Acute liver failure"),
+	h3("Acute liver failure"),
 	
 	# box(title = "Acute liver failure", width = NULL, status = "primary",
 	# 		solidHeader = TRUE,
@@ -115,51 +115,26 @@ wellPanel(
 	),
 	
 	conditionalPanel(
-		condition = "input.aet == 5",
-		hr(),
-		h5("Definition:"),
-		p("Aetiologies such as acute viral hepatitis or ecstasy/cocaine induced ALF. 
-																	 				Presence of encephalopathy is mandatory.")
+		condition = "input.aet == 5"
 	),
 	
 	conditionalPanel(
-		condition = "input.aet == 6",
-		hr(),
-		h5("Definition:"),
-		p("Aetiologies such as seronegative or idosyncratic drug reactions. 
-																	 					Vitamin K repletion is mandatory.")
+		condition = "input.aet == 6"
 	),
 	
 	conditionalPanel(
-		condition = "input.aet == 8",
-		hr(),
-		h5("Definition:"),
-		p("Hepatic artery thrombosis on days 0 to 21 after liver transplantation.")
+		condition = "input.aet == 8"
 	),
 	
 	conditionalPanel(
-		condition = "input.aet == 10",
-		hr(),
-		h5("Definition:"),
-		p("For example, after total hepatectomy.")
+		condition = "input.aet == 10"
 	),
 	
 	conditionalPanel(
-		condition = "input.aet == 11",
-		hr(),
-		h5("Definition:"),
-		p("Any patient who has been a live liver donor (NHS entitled) who develops 
-															 				severe liver failure within 4 weeks of the donor operation.")
+		condition = "input.aet == 11"
 	),
 	
-	
 	conditionalPanel(
-		condition = "input.aet == 20",
-		hr(),
-		h5("Definition:"),
-		p("Multisystem disorder in which severe acute impairment of liver function with or
-																	 		without encephalopathy occurs in association with hepatocellular necrosis in a child with no
-																	 		recognised underlying chronic liver disease. Children with leukaemia / lymphoma,
-																	 		haemophagocytosis and disseminated intra-vascular coagulopathy are excluded.")
+		condition = "input.aet == 20"
 	)
 )
