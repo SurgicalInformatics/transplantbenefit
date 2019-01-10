@@ -6,7 +6,7 @@ ukeld = reactive({
 	na_ukeld = input$rsodium_tbs
 	components = paste("Bil", round(bil_ukeld, 0), "umol/L |",
 										 "Creat", round(creat_ukeld, 0), "umol/L |",
-										 "INR", round(inr_ukeld, 1), "IU |",
+										 "INR", finalfit::round_tidy(inr_ukeld, 1), " |",
 										 "Na", round(na_ukeld, 1), "mmol/L"
 	)
 	ukeld = round(
@@ -38,7 +38,7 @@ standard_meld = reactive({
 	inr_meld = max(input$rinr_tbs, 1) 
 	components = paste("Bilirubin", round(bil_meld, 1), "mg/dL |",
 										 "Creatinine", round(creat_meld, 1), "mg/dL |",
-										 "INR", round(inr_meld, 1), "IU"
+										 "INR", finalfit::round_tidy(inr_meld, 1)
 	)
 	standard_meld = round(
 		(11.2 * log(inr_meld)) + 
@@ -70,7 +70,7 @@ meld_na = reactive({
 	na_meld = min(max(input$rsodium_tbs, 125), 140)
 	components = paste("Bilirubin", round(bil_meld, 1), "mg/dL |",
 										 "Creatinine", round(creat_meld, 1), "mg/dL |",
-										 "INR", round(inr_meld, 1), "IU |",
+										 "INR", finalfit::round_tidy(inr_meld, 1), " |",
 										 "Na", na_meld, "mmol/L"
 	)
 	meld_na = round(

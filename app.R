@@ -45,7 +45,15 @@ ui <- dashboardPage(
 								),
 								column(2,
 											 source(file.path("ui", "ui_input1_3.R"))$value,
-											 source(file.path("ui", "ui_input1_4.R"))$value
+											 source(file.path("ui", "ui_input1_4.R"))$value,
+											 box(
+											 	textInput("download_text", "Name", value = "TBS report"),
+											 	downloadButton('download_pdf',"Download PDF"),
+											 	
+											 	title = "Download", width = 12,
+											 	collapsible = TRUE,
+											 	collapsed = TRUE)
+											 
 								),
 								column(3,
 											 fluidRow(
@@ -136,6 +144,7 @@ server <- function(input, output, session) {
 	source(file.path("server", "server1_2.R"),  local = TRUE)$value
 	source(file.path("server", "server1_3.R"),  local = TRUE)$value
 	# source(file.path("server", "server1_4.R"),  local = TRUE)$value
+	source(file.path("server", "server1_5_download.R"),  local = TRUE)$value
 	# ALF server ----
 	source(file.path("server", "server2_1_alf.R"),  local = TRUE)$value
 	# HCC server ----

@@ -334,9 +334,9 @@ output$tbsBox <- renderInfoBox({
 
 output$x1 = DT::renderDataTable(
 	DT::datatable(linear_prediction_active(),
-								rownames=FALSE, extensions = "FixedColumns", 
-								options = list(#dom = 't', 
-									scrollX = TRUE, 
+								rownames=FALSE, extensions = "FixedColumns",
+								options = list(#dom = 't',
+									scrollX = TRUE,
 									paging=FALSE,
 									fixedColumns = list(leftColumns = 1, rightColumns = 0),
 									searching = FALSE

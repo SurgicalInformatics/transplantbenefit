@@ -1,0 +1,74 @@
+---
+output: pdf_document
+documentclass: article
+classoption: a4paper
+header-includes:
+  - \usepackage{xcolor}
+  - \usepackage{framed}
+  - \usepackage{comment}
+  
+params:
+  download_text: NA
+  footer_txt: NA
+  tbs: NA
+  need: NA
+  utility: NA
+  ukeld: NA
+  standard_meld: NA
+  meld_na: NA
+  report_table1: NA
+  report_table2: NA
+  report_table3: NA
+  report_table4: NA
+  report_table5: NA
+  cancer: TRUE
+---
+
+# `r params$download_text`
+
+Date created: `r Sys.Date() %>%	format(format="%d %B %Y")`
+
+\colorlet{shadecolor}{orange!10} 
+\begin{shaded}
+  \subsection{Transplant benefit score (M2-M1): `r params$tbs` \\
+    \\
+    Utility (M2): `r params$utility` \\
+    \\
+    Need (M1): `r params$need` \\
+  }	
+\end{shaded}
+
+
+
+
+## UKELD: `r params$ukeld[[1]]` 
+`r params$ukeld[[2]]`
+
+## MELD: `r params$standard_meld[[1]]` 
+`r params$standard_meld[[2]]`
+
+## MELD-Na: `r params$meld_na[[1]]` 
+`r params$meld_na[[2]]`
+
+
+
+
+
+```{r, echo=FALSE}
+knitr::kable(params$report_table4, row.names = FALSE, col.names = c("Recipient background", "", 
+																																		"Recipient details", "", 
+																																		"Donor", ""), 
+						 align = c("l", "r", "l", "r", "l", "r"),
+						 						 booktabs = TRUE)
+```
+
+`r if(!params$cancer) {"\\begin{comment}"}`
+
+```{r, echo=FALSE}
+knitr::kable(params$report_table5, row.names = FALSE, col.names = c("Cancer", ""), 
+						 align = c("l", "r"), booktabs = TRUE)
+```
+
+`r if(!params$cancer) {"\\end{comment}"}`
+
+`r params$footer_txt`
