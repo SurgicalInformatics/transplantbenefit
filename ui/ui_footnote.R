@@ -1,12 +1,12 @@
-footer_txt ="© Scottish Liver Transplant Unit 2017-2018.
+footer_txt ="© Surgical Informatics, University of Edinburgh | Scottish Liver Transplant Unit 2019.
 																	 		The information in this app is provided as an information resource only, 
 																	 		and is not to be used alone for any diagnostic or treatment purpose."
 
 box(title = "References", status = "info", width=12,
-		"Version 0.10",br(),
-		a(href="https://github.com/SurgicalInformatics/liverapp",
+		"Version 0.11",br(),
+		a(href="https://github.com/SurgicalInformatics/transplantbenefit",
 			"Code on Github", target="_blank"),br(),
-		a(href="https://github.com/SurgicalInformatics/liverapp/issues",
+		a(href="https://github.com/SurgicalInformatics/transplantbenefit/issues",
 			"Bugs / feature requests", target="_blank", style="color:red"),br(),
 		a(href="https://www.odt.nhs.uk/transplantation/tools-policies-and-guidance/policies-and-guidance/",
 			"NHSBT Liver selection policy 18/07/2018", target="_blank"),br(),

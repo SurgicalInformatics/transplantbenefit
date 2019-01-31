@@ -166,9 +166,9 @@ output$download_pdf <- downloadHandler(
 		
 		# Set up parameters to pass to Rmd document
 		params <- list(
-			tbs = finalfit::round_tidy(tbs(), 1),
-			need = finalfit::round_tidy(m1(), 1),
-			utility = finalfit::round_tidy(m2(), 1),
+			tbs = finalfit::round_tidy(tbs_out()[[1]]$tbs, 1),
+			need = finalfit::round_tidy(tbs_out()[[1]]$m1, 1),
+			utility = finalfit::round_tidy(tbs_out()[[1]]$m2, 1),
 			ukeld = ukeld(),
 			standard_meld = standard_meld(),
 			meld_na = meld_na(),

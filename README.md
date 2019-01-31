@@ -23,4 +23,4 @@ An online calculator which includes:
 * Variant syndromes
     - As defined by UK listing rules
 
-Version 0.10
+Version 0.11

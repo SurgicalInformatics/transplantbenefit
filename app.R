@@ -10,14 +10,14 @@ library(dplyr)
 # Define UI
 ui <- dashboardPage(
 	
-	title = "Edinburgh liver app",
+	title = "Transplant benefit",
 	skin="black",
 	dashboardHeader(
 		tags$li(class = "dropdown", # Hack to get this to work. 
 						tags$head(tags$link(rel="shortcut icon", href="https://argonaut.is.ed.ac.uk/public/favicon.ico"),
 											tags$script(type="text/javascript", src="retina.js"))),
-		title = HTML("<a href = 'http://liverapp.org'>
-									<img src='https://argonaut.is.ed.ac.uk/public/elapp_logo.png' data-rjs = 'https://argonaut.is.ed.ac.uk/public/elapp_logo@2x.png' />
+		title = HTML("<a href = 'https://transplantbenefit.org'>
+									<img src='https://argonaut.is.ed.ac.uk/public/tb.png' data-rjs = 'https://argonaut.is.ed.ac.uk/public/tb@2x.png' />
 										</a>"
 		),
 		
