@@ -1,4 +1,4 @@
-# Edinburgh liver app
+# TransplantBenefit.org
 
 An online calculator which includes:
 
