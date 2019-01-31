@@ -1,4 +1,4 @@
-footer_txt ="© Scottish Liver Transplant Unit 2017-2018.
+footer_txt ="© Surgical Informatics, University of Edinburgh | Scottish Liver Transplant Unit 2019.
 																	 		The information in this app is provided as an information resource only, 
 																	 		and is not to be used alone for any diagnostic or treatment purpose."
 
