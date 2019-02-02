@@ -1,7 +1,8 @@
-# Liverapp.org
+# TransplantBenefit.org
 # Ewen Harrison
-# November 2018
-# 
+# Surgical Inforamatics
+# University of Edinburgh
+# Started November 2018
 
 library(shiny)
 library(shinydashboard)
@@ -10,14 +11,17 @@ library(dplyr)
 # Define UI
 ui <- dashboardPage(
 	
-	title = "Transplant benefit",
+	title = "Transplant Benefit .org",
 	skin="black",
 	dashboardHeader(
 		tags$li(class = "dropdown", # Hack to get this to work. 
-						tags$head(tags$link(rel="shortcut icon", href="https://argonaut.is.ed.ac.uk/public/favicon.ico"),
-											tags$script(type="text/javascript", src="retina.js"))),
+						tags$head(tags$link(rel="shortcut icon", href="https://argonaut.is.ed.ac.uk/public/favicon.ico")
+						)
+		),
+		
+		# Retina quality images via JS plugin, see end body
 		title = HTML("<a href = 'https://transplantbenefit.org'>
-									<img src='https://argonaut.is.ed.ac.uk/public/tb.png' data-rjs = 'https://argonaut.is.ed.ac.uk/public/tb@2x.png' />
+									<img src='/public/tb.png' data-rjs = '3' />
 										</a>"
 		),
 		
@@ -38,7 +42,8 @@ ui <- dashboardPage(
 							fluidRow(
 								# Input
 								column(2,
-											 source(file.path("ui", "ui_input1_1.R"))$value
+											 fluidRow(source(file.path("ui", "ui_input1_header.R"))$value),
+											 fluidRow(source(file.path("ui", "ui_input1_1.R"))$value)
 								),
 								column(2,
 											 source(file.path("ui", "ui_input1_2.R"))$value
@@ -71,6 +76,8 @@ ui <- dashboardPage(
 											 source(file.path("ui", "ui_1_6_selection_criteria.R"))$value,
 											 source(file.path("ui", "ui_1_7_cld_criteria.R"))$value,
 											 source(file.path("ui", "ui_footnote.R"))$value
+											 
+											 # Plots to return when distribution data available
 											 # box(
 											 # 	plotOutput("hist_m1", height=200),
 											 # 	plotOutput("hist_m2", height=200),
@@ -87,7 +94,10 @@ ui <- dashboardPage(
 											 	condition = 'input.data_table == true',
 											 	DT::dataTableOutput("x1"))
 								)
-							)
+							),
+							
+							# Retina images
+							tags$script(type="text/javascript", src="retina.min.js")
 			),
 			
 			# Acute liver failure ----
@@ -139,18 +149,22 @@ server <- function(input, output, session) {
 	
 	# Include the logic (server) for each tab
 	source(file.path("server", "server0_fn.R"),  local = TRUE)$value
+	
 	# TBS server ----
 	source(file.path("server", "server1_1.R"),  local = TRUE)$value
 	source(file.path("server", "server1_2.R"),  local = TRUE)$value
 	source(file.path("server", "server1_3.R"),  local = TRUE)$value
 	# source(file.path("server", "server1_4.R"),  local = TRUE)$value
 	source(file.path("server", "server1_5_download.R"),  local = TRUE)$value
+	
 	# ALF server ----
 	source(file.path("server", "server2_1_alf.R"),  local = TRUE)$value
+	
 	# HCC server ----
 	source(file.path("server", "server3_1_hcc.R"),  local = TRUE)$value
+	
 	# Variant server ----
-	# Intentionally none. 
+	# Intentionally blank. 
 }
 
 # Run the application 

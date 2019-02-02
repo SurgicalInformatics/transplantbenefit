@@ -57,7 +57,7 @@ output$m1Box <- renderInfoBox({
 		"Need (M1)", h1(finalfit::round_tidy(tbs_out()[[1]]$m1, 1)), 
 		"Lower indicates greater need",
 		icon = icon("bar-chart"),
-		color = "orange", fill=TRUE
+		color = "black", fill=TRUE
 	)
 })
 output$m2Box <- renderInfoBox({
@@ -65,15 +65,22 @@ output$m2Box <- renderInfoBox({
 		"Utility (M2)", h1(finalfit::round_tidy(tbs_out()[[1]]$m2, 1)), 
 		"Higher indicates greater utility",
 		icon = icon("bar-chart"),
-		color = "orange", fill=TRUE
+		color = "black", fill=TRUE
 	)
 })
+
+tbs_status = reactive({
+	ifelse(tbs_out()[[1]]$tbs >1000, "red", 
+				 ifelse(tbs_out()[[1]]$tbs >600, "orange", "green"))
+})
+
+
 output$tbsBox <- renderInfoBox({
 	infoBox(
 		"TBS (M2-M1)", h1(finalfit::round_tidy(tbs_out()[[1]]$tbs, 1)), 
 		icon = icon("bar-chart"),
 		"Higher indicates greater net-benefit",
-		color = "orange", fill=TRUE
+		color = tbs_status(), fill=TRUE
 	)
 })
 

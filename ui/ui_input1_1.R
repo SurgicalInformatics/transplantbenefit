@@ -1,5 +1,4 @@
 wellPanel(
-	h3("Transplant benefit score"),
 	h4("Recipient"),
 	fluidRow(
 		column(6,
