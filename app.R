@@ -15,7 +15,11 @@ ui <- dashboardPage(
 	skin="black",
 	dashboardHeader(
 		tags$li(class = "dropdown", # Hack to get this to work. 
-						tags$head(tags$link(rel="shortcut icon", href="https://argonaut.is.ed.ac.uk/public/favicon.ico")
+						tags$head(
+							tags$link(rel="shortcut icon", href="https://argonaut.is.ed.ac.uk/public/favicon.ico"),
+							
+							# Google analytics tracker info pasted into root file named as below. Not included in git. 
+							includeHTML("analytics.html")
 						)
 		),
 		
