@@ -25,7 +25,7 @@ ui <- dashboardPage(
 		
 		# Retina quality images via JS plugin, see end body
 		title = HTML("<a href = 'https://transplantbenefit.org'>
-									<img src='/public/tb.png' data-rjs = '3' />
+									<img src='https://argonaut.is.ed.ac.uk/public/tb.png' data-rjs = '3' />
 										</a>"
 		),
 		
