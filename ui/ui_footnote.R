@@ -1,4 +1,4 @@
-footer_txt = "© Surgical Informatics, University of Edinburgh | Scottish Liver Transplant Unit 2019."
+footer_txt = "© Surgical Informatics, University of Edinburgh | Scottish Liver Transplant Unit 2022"
 
 box(title = "References", status = "info", width=12,
 		"Version 0.11",br(),
